@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8754195319739290615}
   - component: {fileID: 6128656569285474961}
-  - component: {fileID: 5596613336195870772}
+  - component: {fileID: 4777459202423657531}
   m_Layer: 0
   m_Name: Building2
   m_TagString: Untagged
@@ -208,8 +208,8 @@ MonoBehaviour:
   buildingType: {fileID: 11400000, guid: f0005d0924891674591af9958d9e8796, type: 2}
   storageToCreatedItems: {fileID: 2866676675331375808}
   storageToNeededItems: {fileID: 7584652493377583211}
-  storageInBuilding: {fileID: 5596613336195870772}
---- !u!114 &5596613336195870772
+  inventoryInBuilding: {fileID: 0}
+--- !u!114 &4777459202423657531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,11 +218,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2120219025456084570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f92632313d97d46a27590ccc94918c, type: 3}
+  m_Script: {fileID: 11500000, guid: 196a75d3dfcbb524a811d7becc7d94f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointToMoveItem: {fileID: 4482216603240118309}
-  sizeStorageItems: 10
+  sizeInventory: 10
   items: []
 --- !u!1 &2866676675331375809
 GameObject:
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToMoveItem: {fileID: 5354028280321222431}
-  sizeStorageItems: 10
+  sizeInventory: 10
   items: []
 --- !u!114 &2866676675331375811
 MonoBehaviour:
@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96596afe186c6f6459d1d2ce0ad9210e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeMovingTheItem: 1
-  storage: {fileID: 2866676675331375808}
+  timeBeforeMovingTheItem: 0.5
+  _storage: {fileID: 2866676675331375808}
 --- !u!1 &4362079206723693590
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToMoveItem: {fileID: 4362079206723693585}
-  sizeStorageItems: 10
+  sizeInventory: 10
   items: []
 --- !u!114 &7584652493377583210
 MonoBehaviour:
@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c353431f0da027144bdf243c2f906298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeMovingTheItem: 1
-  storage: {fileID: 7584652493377583211}
-  itemTypes: []
+  timeBeforeMovingTheItem: 0.5
+  _storage: {fileID: 7584652493377583211}
+  itemTypes:
+  - {fileID: 11400000, guid: 270d7db5762586246af0ab7b9bad42f4, type: 2}

@@ -6,7 +6,7 @@ public class ItemStorage : MonoBehaviour
 {
     [SerializeField] private Transform pointToMoveItem;
 
-    [SerializeField] protected int sizeStorageItems = 10;
+    [SerializeField] protected int sizeInventory = 10;
 
     protected int itemsCount = 0;
 
@@ -14,9 +14,9 @@ public class ItemStorage : MonoBehaviour
 
     public bool IsCanGiveItem() => items.Count > 0;
     public bool IsCanGiveItem(ItemSO itemType) => items.Exists(x => x.ItemType == itemType);
-    public bool IsCanTakeItem() => itemsCount < sizeStorageItems;
+    public bool IsCanTakeItem() => itemsCount < sizeInventory;
 
-    public ItemGameObject GiveItem()
+    public ItemGameObject GiveItems()
     {
         if (!IsCanGiveItem()) return null;
 
@@ -31,7 +31,7 @@ public class ItemStorage : MonoBehaviour
         return item;
     }
 
-    public ItemGameObject GiveItem(ItemSO itemType)
+    public ItemGameObject GiveItems(ItemSO itemType)
     {
         if (!IsCanGiveItem(itemType)) return null;
 
@@ -45,11 +45,11 @@ public class ItemStorage : MonoBehaviour
         return item;
     }
 
-    protected virtual Vector3 ItemPositionOffset(int itemsCount) => new Vector3(itemsCount % 5, 0, itemsCount / 5);
+    protected virtual Vector3 ItemPosOffset(int itemsCount) => new Vector3(itemsCount % 5, 0, itemsCount / 5);
 
     public void TakeItem(ItemGameObject item)
     {
-        item.SetMove(pointToMoveItem, this, ItemPositionOffset(itemsCount));
+        item.SetMove(pointToMoveItem, this, ItemPosOffset(itemsCount));
 
         itemsCount++;
 
@@ -70,7 +70,7 @@ public class ItemStorage : MonoBehaviour
         int count = 0;
         foreach (ItemGameObject item in items)
         {
-            item.SetMove(pointToMoveItem, this, ItemPositionOffset(count));
+            item.SetMove(pointToMoveItem, this, ItemPosOffset(count));
             count++;
         }
     }

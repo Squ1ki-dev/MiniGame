@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemStorageInBuilding : ItemStorage
+public class InventoryBuilding : ItemStorage
 {
     public bool IsCompleteMoveAllNeededItems(List<ItemSO> itemTypes)
     {

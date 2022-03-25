@@ -6,9 +6,9 @@ public class ItemTriggerMoveToCharacter : ItemTriggerMove
 {
     public override bool Trigger(ItemStorage inventory)
     {
-        if (inventory.IsCanTakeItem() && storage.IsCanGiveItem())
+        if (inventory.IsCanTakeItem() && _storage.IsCanGiveItem())
         {
-            inventory.TakeItem(storage.GiveItem());
+            inventory.TakeItem(_storage.GiveItems());
             return true;
         }
 

@@ -39,19 +39,18 @@ public class UIMesseges : MonoBehaviour
             messages.Clear();
 
             int i = 0;
+            
             foreach (string text in Texts)
             {
                 Transform textObject = Instantiate(textMessage, transform);
                 textObject.position += new Vector3(0, i * 60, 0);
                 messages.Add(textObject);
                 i++;
-
                 Text textField = textObject.GetComponent<Text>();
                 textField.text = text;
             }
 
             Texts.Clear();
-
             timer = 0;
         }
     }

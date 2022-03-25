@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7916330014947536452}
   - component: {fileID: 4732173646319617826}
-  - component: {fileID: 8780531455716567902}
+  - component: {fileID: 4617656714403970956}
   m_Layer: 0
   m_Name: Building1
   m_TagString: Untagged
@@ -83,8 +83,8 @@ MonoBehaviour:
   buildingType: {fileID: 11400000, guid: 301b17d7cc326bb4f8b52dbd13a17829, type: 2}
   storageToCreatedItems: {fileID: 3704537563101478771}
   storageToNeededItems: {fileID: 9071176777711896024}
-  storageInBuilding: {fileID: 8780531455716567902}
---- !u!114 &8780531455716567902
+  inventoryInBuilding: {fileID: 0}
+--- !u!114 &4617656714403970956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,11 +93,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 706455523848014825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f92632313d97d46a27590ccc94918c, type: 3}
+  m_Script: {fileID: 11500000, guid: 196a75d3dfcbb524a811d7becc7d94f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointToMoveItem: {fileID: 3196311005944133988}
-  sizeStorageItems: 10
+  sizeInventory: 10
   items: []
 --- !u!1 &898721316141276082
 GameObject:
@@ -253,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3704537563101478770}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.020000458, y: -2.49, z: -5.61}
+  m_LocalPosition: {x: -0.020000458, y: -2.49, z: -10}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 7916330014947536452}
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToMoveItem: {fileID: 6839848722587081388}
-  sizeStorageItems: 10
+  sizeInventory: 10
   items: []
 --- !u!114 &3704537563101478768
 MonoBehaviour:
@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96596afe186c6f6459d1d2ce0ad9210e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeMovingTheItem: 1
-  storage: {fileID: 3704537563101478771}
+  timeBeforeMovingTheItem: 0.5
+  _storage: {fileID: 3704537563101478771}
 --- !u!1 &6895623063384236524
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointToMoveItem: {fileID: 2893674478727156130}
-  sizeStorageItems: 10
+  sizeInventory: 10
   items: []
 --- !u!114 &9071176777711896025
 MonoBehaviour:
@@ -504,6 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c353431f0da027144bdf243c2f906298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeMovingTheItem: 1
-  storage: {fileID: 9071176777711896024}
+  timeBeforeMovingTheItem: 0.5
+  _storage: {fileID: 0}
   itemTypes: []

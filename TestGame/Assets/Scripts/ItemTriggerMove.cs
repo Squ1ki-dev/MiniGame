@@ -6,11 +6,9 @@ public abstract class ItemTriggerMove : MonoBehaviour
 {
     private float timeToMoveTheNextItem = 0;
 
-    [SerializeField]
-    private float timeBeforeMovingTheItem = 5;
+    [SerializeField] private float timeBeforeMovingTheItem = 5;
 
-    [SerializeField]
-    protected ItemStorage storage;
+    [SerializeField] protected ItemStorage _storage;
 
     public virtual bool Trigger(ItemStorage inventory) => false;
 

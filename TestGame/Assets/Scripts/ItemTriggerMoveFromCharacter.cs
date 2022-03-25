@@ -10,9 +10,9 @@ public class ItemTriggerMoveFromCharacter : ItemTriggerMove
     {
         foreach (ItemSO itemType in itemTypes)
         {
-            if (storage.IsCanTakeItem() && inventory.IsCanGiveItem(itemType))
+            if (_storage.IsCanTakeItem() && inventory.IsCanGiveItem(itemType))
             {
-                storage.TakeItem(inventory.GiveItem(itemType));
+                _storage.TakeItem(inventory.GiveItems(itemType));
                 return true;
             }
         }

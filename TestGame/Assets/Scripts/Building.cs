@@ -8,7 +8,7 @@ public class Building : MonoBehaviour
     [SerializeField] ItemStorage storageToCreatedItems;
 
     [SerializeField] ItemStorage storageToNeededItems;
-    [SerializeField] ItemStorageInBuilding storageInBuilding;
+    [SerializeField] InventoryBuilding inventoryInBuilding;
 
     private float timeToProduct = 0;
 
@@ -46,9 +46,9 @@ public class Building : MonoBehaviour
 
         if (!production && moveNeededItems)
         {
-            if (storageInBuilding.IsCompleteMoveAllNeededItems(buildingType.NeedToProduction))
+            if (inventoryInBuilding.IsCompleteMoveAllNeededItems(buildingType.NeedToProduction))
             {
-                storageInBuilding.DestroyAllNeededItems();
+                inventoryInBuilding.DestroyAllNeededItems();
                 production = true;
                 moveNeededItems = false;
             }
@@ -81,7 +81,7 @@ public class Building : MonoBehaviour
     {
         foreach (ItemSO itemType in buildingType.NeedToProduction)
         {
-            storageInBuilding.TakeItem(storageToNeededItems.GiveItem(itemType));
+            inventoryInBuilding.TakeItem(storageToNeededItems.GiveItems(itemType));
         }
     }
 }
